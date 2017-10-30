@@ -1,0 +1,8 @@
+<div *ngIf="stories">
+  <div class="row" *ngFor="let story of stories">
+    <div class="col-sm-4" [routerLink]="['/stories', story.title]">
+      <p>{{ story.title}}</p>
+    </div>
+    <div class="col-sm-4">{{ story.authorName }}</div>
+  </div>
+</div>
