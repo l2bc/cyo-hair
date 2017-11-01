@@ -1,33 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-export class TraditionalStory {
-  title: string;
-  authorName: string;
-  body: string;
-}
-
-const stories: TraditionalStory[] = [
-    {
-        title: 'The Soccer cut',
-        authorName: 'Love to Be Clipped',
-        body: 'The text of the story'
-    },
-    {
-        title: 'After Break',
-        authorName: 'Love to Be Clipped',
-        body: 'The text of the story, after break'
-    },
-    {
-        title: 'The Bet',
-        authorName: 'Love to Be Clipped',
-        body: 'The bet haircut'
-    },
-    {
-        title: 'A night out',
-        authorName: 'Love to Be Clipped',
-        body: 'Another story, the night out'
-    },
-];
+import { TraditionalStory} from "../shared/models/traditional-story";
+import {TraditionalStoryService} from "../shared/services/traditional-story.service";
 
 @Component({
   selector: 'app-traditional-story',
@@ -36,12 +9,12 @@ const stories: TraditionalStory[] = [
 })
 
 export class TraditionalStoryComponent implements OnInit {
-
-  constructor() { }
+    stories: TraditionalStory[];
+    constructor(private service: TraditionalStoryService) {}
 
   ngOnInit() {
+      this.service.getStories().then(stories => this.stories = stories);
   }
-  stories = stories;
 
 
 }

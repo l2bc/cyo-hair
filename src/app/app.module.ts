@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { TraditionalStoryComponent } from './traditional-story/traditional-story.component';
 import { CyoaStoryComponent } from './cyoa-story/cyoa-story.component';
@@ -11,6 +10,7 @@ import { appRouting } from "./app.routing";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthorComponent } from './author/author.component';
 import { TraditionalStoryDisplayComponent } from './traditional-story-display/traditional-story-display.component';
+import { TraditionalStoryService} from "./shared/services/traditional-story.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +28,9 @@ import { TraditionalStoryDisplayComponent } from './traditional-story-display/tr
     BrowserModule,
     appRouting
   ],
-  providers: [],
+  providers: [
+      TraditionalStoryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

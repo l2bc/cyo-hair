@@ -1,1 +1,6 @@
-<p>Story Display goes here!!!!</p>
+<a (click)="goBack()" class="btn btn-sm btn-info">Go back</a>
+<div *ngIf="story">
+    <h1>{{story.title}}</h1>
+    <h2>{{story.authorName}}</h2>
+    <content>{{story.body}}</content>
+</div>
