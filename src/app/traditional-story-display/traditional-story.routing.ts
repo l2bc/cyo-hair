@@ -4,8 +4,19 @@ import { TraditionalStoryDisplayComponent } from "./traditional-story-display.co
 import {ModuleWithProviders} from "@angular/core";
 
 const traditionalStoryRoutes: Routes = [
-    { path: 'stories', component: TraditionalStoryComponent },
-    { path: 'stories/:title', component: TraditionalStoryDisplayComponent }
+    {
+        path: '',
+        children: [
+            {
+                path: '',
+                component: TraditionalStoryComponent
+            },
+            {
+                path: ':title',
+                component: TraditionalStoryDisplayComponent
+            }
+        ]
+    }
 ];
 
 export const traditionalStoryRouting: ModuleWithProviders = RouterModule.forChild(traditionalStoryRoutes);

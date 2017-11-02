@@ -12,6 +12,10 @@ import {TraditionalStoryDisplayComponent} from "./traditional-story-display/trad
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
+    {
+        path: 'stories',
+        loadChildren: 'app/traditional-story/traditional-story.module#TraditionalStoryModule'
+    },
     { path: 'cyoastories', component: CyoaStoryComponent },
     { path: 'search', component: FindStoryComponent },
     { path: 'submit', component: SubmitStoryComponent },

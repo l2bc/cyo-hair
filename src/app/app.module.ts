@@ -8,7 +8,6 @@ import { HomeComponent } from './home/home.component';
 import { appRouting } from "./app.routing";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthorComponent } from './author/author.component';
-import {TraditionalStoryModule} from "./traditional-story/traditional-story.module";
 
 @NgModule({
   declarations: [
@@ -22,8 +21,7 @@ import {TraditionalStoryModule} from "./traditional-story/traditional-story.modu
   ],
   imports: [
     BrowserModule,
-    appRouting,
-    TraditionalStoryModule
+    appRouting
   ],
   providers: [
   ],
