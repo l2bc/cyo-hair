@@ -34,7 +34,11 @@ export class TraditionalStoryService {
     return storiesPromise;
   }
   // get specific story
-  getStory(title){
-    return storiesPromise.then(stories=> stories.find(story => story.title === title));
+  getStoryByTitle(title){
+    return storiesPromise.then(stories=> stories.find(story => story.title.toUpperCase() === title.toUpperCase()));
+  }
+
+  getStoryByAuthor(author){
+      return storiesPromise.then(stories=>stories.filter(story => story.authorName.toUpperCase() === author.toUpperCase()));
   }
 }

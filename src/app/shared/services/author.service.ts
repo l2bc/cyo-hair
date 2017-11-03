@@ -22,6 +22,6 @@ export class AuthorService {
     return authorsPromise;
   }
   getAuthor(name) {
-    return authorsPromise.then(authors => authors.find(author => author.name === name));
+    return authorsPromise.then(authors => authors.find(author => author.name.toUpperCase() === name.toUpperCase()));
   }
 }

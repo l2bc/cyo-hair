@@ -19,7 +19,7 @@ export class TraditionalStoryDisplayComponent implements OnInit {
 
   ngOnInit() {
     let storyTitle = this.route.snapshot.params['title'];
-    this.service.getStory(storyTitle).then(story => this.story = story);
+    this.service.getStoryByTitle(storyTitle).then(story => this.story = story);
   }
 
   goBack() {

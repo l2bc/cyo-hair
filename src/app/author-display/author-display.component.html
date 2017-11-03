@@ -3,4 +3,12 @@
 <div *ngIf="authorObj">
   <h2>{{authorObj.name}}</h2>
   <h2>{{authorObj.email}}</h2>
+  <h3>Stories:</h3>
+  <div *ngIf="relatedStories">
+    <div class="row" *ngFor="let story of relatedStories">
+      <div class="col-sm-4" [routerLink]="['/stories', story.title]">
+        <p>{{ story.title}}</p>
+      </div>
+    </div>
+  </div>
 </div>

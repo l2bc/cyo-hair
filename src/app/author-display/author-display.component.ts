@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Author} from "../shared/models/author";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthorService} from "../shared/services/author.service";
+import {TraditionalStoryService} from "../shared/services/traditional-story.service";
+import {TraditionalStory} from "../shared/models/traditional-story";
 
 @Component({
   selector: 'app-author-display',
@@ -10,16 +12,19 @@ import {AuthorService} from "../shared/services/author.service";
 })
 export class AuthorDisplayComponent implements OnInit {
   authorObj: Author;
+  relatedStories: TraditionalStory[];
 
   constructor(
       private route: ActivatedRoute,
-      private service: AuthorService,
+      private authorService: AuthorService,
+      private storyService: TraditionalStoryService,
       private router: Router
   ) {}
 
   ngOnInit() {
     let authorName = this.route.snapshot.params['name'];
-    this.service.getAuthor(authorName).then(author=>this.authorObj = author);
+    this.authorService.getAuthor(authorName).then(author=>this.authorObj = author);
+    this.storyService.getStoryByAuthor(authorName).then(stories =>this.relatedStories = stories);
   }
 
   goBack() {
