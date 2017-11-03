@@ -3,6 +3,6 @@
     <div class="col-sm-4" [routerLink]="['/stories', story.title]">
       <p>{{ story.title}}</p>
     </div>
-    <div class="col-sm-4">{{ story.authorName }}</div>
+    <div class="col-sm-4" [routerLink]="['/authors', story.authorName]">{{ story.authorName }}</div>
   </div>
 </div>
