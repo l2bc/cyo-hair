@@ -1,6 +1,6 @@
 import { Routes, RouterModule} from "@angular/router";
-import { TraditionalStoryComponent } from "../traditional-story/traditional-story.component";
-import { TraditionalStoryDisplayComponent } from "./traditional-story-display.component";
+import { TraditionalStoryComponent } from "./traditional-story.component";
+import { TraditionalStoryDisplayComponent } from "../traditional-story-display/traditional-story-display.component";
 import {ModuleWithProviders} from "@angular/core";
 
 const traditionalStoryRoutes: Routes = [

@@ -1,0 +1,7 @@
+<div *ngIf="authors">
+    <div class="row" *ngFor="let author of authors">
+        <div class="col-sm-4" [routerLink]="['/authors', author.name]">
+            <p>{{ author.name}}</p>
+        </div>
+    </div>
+</div>

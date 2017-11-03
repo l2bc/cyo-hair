@@ -7,7 +7,6 @@ import { FindStoryComponent } from './find-story/find-story.component';
 import { HomeComponent } from './home/home.component';
 import { appRouting } from "./app.routing";
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthorComponent } from './author/author.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +15,7 @@ import { AuthorComponent } from './author/author.component';
     SubmitStoryComponent,
     FindStoryComponent,
     HomeComponent,
-    NotFoundComponent,
-    AuthorComponent
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

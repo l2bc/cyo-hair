@@ -19,7 +19,10 @@ const appRoutes: Routes = [
     { path: 'cyoastories', component: CyoaStoryComponent },
     { path: 'search', component: FindStoryComponent },
     { path: 'submit', component: SubmitStoryComponent },
-    { path: 'authors', component: AuthorComponent },
+    {
+        path: 'authors',
+        loadChildren: 'app/author/author.module#AuthorModule'
+    },
     { path: '**', component: NotFoundComponent }
 ];
 
